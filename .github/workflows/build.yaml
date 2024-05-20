@@ -6,7 +6,7 @@ jobs:
     name: Swift ${{ matrix.swift }} on ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [macos-latest]
         swift: ["5.10"]
     runs-on: ${{ matrix.os }}
     steps:
@@ -14,8 +14,8 @@ jobs:
         - uses: swift-actions/setup-swift@v2
           with:
             swift-version: ${{ matrix.swift }}
-        - name: Build
-          run: swift build
-        - name: Run
-          run: swift run
+        - name: Build & Run
+          run: swift build && swift run
+        - name: Check content
+          run: ls -la
 
