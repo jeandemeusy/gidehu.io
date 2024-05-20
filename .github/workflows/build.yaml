@@ -3,12 +3,8 @@ on: [pull_request]
 
 jobs:
   build:
-    name: Swift ${{ matrix.swift }} on ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [macos-latest]
-        swift: ["5.10"]
-    runs-on: ${{ matrix.os }}
+    name: Build HTML
+    runs-on: macos-latest
     steps:
         - uses: actions/checkout@v4
         - uses: swift-actions/setup-swift@v2
@@ -17,7 +13,7 @@ jobs:
         - uses: actions/cache@v4
           with:
             path: Build/
-            key: ${{ matrix.swift }}-${{ matrix.os }}-build
+            key: build-results
         - name: Build & Run
           run: swift build && swift run
 
@@ -28,7 +24,7 @@ jobs:
         - uses: actions/cache@v4
           with:
             path: Build/
-            key: ${{ matrix.swift }}-${{ matrix.os }}-build
+            key: build-results
         - uses: shallwefootball/s3-upload-action@master
           with:
             aws_key_id: ${{ secrets.AWS_KEY_ID }}
