@@ -8,7 +8,7 @@
             ],
             "args": [],
             "cwd": "${workspaceFolder:gidehu.io}",
-            "name": "Debug IgniteStarter",
+            "name": "Debug gidehu.io",
             "program": "${workspaceFolder:gidehu.io}/.build/debug/IgniteStarter",
             "preLaunchTask": "swift: Build Debug IgniteStarter"
         },
@@ -20,9 +20,9 @@
             ],
             "args": [],
             "cwd": "${workspaceFolder:gidehu.io}",
-            "name": "Release IgniteStarter",
+            "name": "Release gidehu.io",
             "program": "${workspaceFolder:gidehu.io}/.build/release/IgniteStarter",
-            "preLaunchTask": "swift: Build Release IgniteStarter"
+            "preLaunchTask": "swift: Build Release gidehu.io"
         }
     ]
 }

@@ -6,6 +6,18 @@ struct Home: StaticPage {
     var title = "Home"
 
     func body(context: PublishingContext) -> [BlockElement] {
+        NavigationBar(logo: "&#60;JDU&#62;") {
+            Link("Portfolio", target: Portfolio())
+            Link("Contact", target: "/contact")
+        }
+        .background("#5b755e")
+        .navigationItemAlignment(.trailing)
+        .navigationBarStyle(.dark)
+        .cornerRadius(10)
+        .style("font-family: Source Code Pro, monospace")
+        
+        Spacer(size: 50)
+
         Group {
             Image(decorative: "images/dall_e_me.png")
                 .resizable()
@@ -53,11 +65,6 @@ struct Home: StaticPage {
                 bottomBarLink(
                     image: "images/icons/mail.svg", 
                     target: "mailto:dev.jdu@gmail.com"
-                )
-
-                bottomBarLink(
-                    image: "images/icons/apple.svg", 
-                    target: Portfolio()
                 )
             }
             .class("wrapper")
