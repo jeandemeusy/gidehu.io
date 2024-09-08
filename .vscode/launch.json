@@ -23,6 +23,30 @@
             "name": "Release gidehu.io",
             "program": "${workspaceFolder:gidehu.io}/.build/release/IgniteStarter",
             "preLaunchTask": "swift: Build Release gidehu.io"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:gidehu.io}",
+            "name": "Debug IgniteStarter",
+            "program": "${workspaceFolder:gidehu.io}/.build/debug/IgniteStarter",
+            "preLaunchTask": "swift: Build Debug IgniteStarter"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:gidehu.io}",
+            "name": "Release IgniteStarter",
+            "program": "${workspaceFolder:gidehu.io}/.build/release/IgniteStarter",
+            "preLaunchTask": "swift: Build Release IgniteStarter"
         }
     ]
 }

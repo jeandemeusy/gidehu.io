@@ -1,5 +1,11 @@
 name: Build and Push to S3
-on: [pull_request]
+on:
+  push:
+      branches:
+        - main
+    workflow_dispatch:
+    workflow_call:
+  pull_request:
 
 jobs:
   build:
